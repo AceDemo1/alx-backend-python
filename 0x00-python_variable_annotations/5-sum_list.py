@@ -2,7 +2,7 @@
 """takes list and return their sum as a float"""
 
 
-def sum_list(input_list: list[float]) -> float:
+def sum_list(input_list: List[float]) -> float:
     """define func"""
     j = 0
     for i in input_list:
