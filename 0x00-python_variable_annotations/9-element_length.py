@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """annotate func"""
-from typing import Iterable, List, Tuple
+from typing import Iterable, List, Tuple, Sequence
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[List[Sequence], int]]:
     """define func"""
