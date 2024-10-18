@@ -5,6 +5,6 @@
 def sum_list(input_list: list[float]) -> float:
     """define func"""
     j = 0
-    for i in list:
+    for i in input_list:
         j += i
     return j
