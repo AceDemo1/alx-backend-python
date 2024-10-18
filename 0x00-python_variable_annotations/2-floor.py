@@ -4,4 +4,4 @@
 
 def floor(n: float) -> int:
     """definne func"""
-    return int(a)
+    return int(n)
