@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """takes list and return their sum as a float"""
-from typing import List
+from typing import List, Union
 
 
 def sum_mixed_list(mxd_list: List[Union[float, int]]) -> float:
