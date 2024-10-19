@@ -3,8 +3,8 @@
 from typing import Union, Mapping, Any, TypeVar
 
 
-ty = TypeVar('ty')
-def safely_get_value(dct: Mapping[Any, ty], key: Any, default: Union[ty, None] = None) -> Union[ty, None]:
+T = TypeVar('T')
+def safely_get_value(dct: Mapping[Any, T], key: Any, default: Union[T, None] = None) -> Union[T, None]:
     """define func"""
     if key in dct:
         return dct[key]
