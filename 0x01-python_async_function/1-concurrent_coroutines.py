@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-__import__('0-basic_async_syntax').wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 import asyncio, random
 from typing import List
 
