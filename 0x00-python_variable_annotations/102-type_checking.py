@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
-    zoomed_in: Tuple = [
+"""annotate func"""
+from typing import List, Any
+
+def zoom_array(lst: List[Any], factor: Any = 2) -> List[int]:
+    zoomed_in: List[Any] = [
             item for item in lst
             for i in range(factor)
             ]
@@ -9,6 +12,6 @@ def zoom_array(lst: Tuple, factor: int = 2) -> Tuple:
 
 array = [12, 72, 91]
 
-        zoom_2x = zoom_array(array)
+zoom_2x = zoom_array(array)
 
-        zoom_3x = zoom_array(array, 3.0)
+zoom_3x = zoom_array(array, 3.0)
