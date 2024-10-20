@@ -12,5 +12,5 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     tasks = []
     for k in asyncio.as_completed(delays):
         task = await k
-        j.append(task)
+        tasks.append(task)
     return tasks
