@@ -8,9 +8,9 @@ from typing import List
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """define func"""
-    task = [asyncio.create_task(wait_random(max_delay)) for j in range(n)]
-    j = []
-    for k in asyncio.as_completed(task):
-        l = await k
-        j.append(l)
-    return j
+    delays = [asyncio.create_task(wait_random(max_delay)) for j in range(n)]
+    tasks = []
+    for k in asyncio.as_completed(delays):
+        task = await k
+        j.append(task)
+    return tasks
