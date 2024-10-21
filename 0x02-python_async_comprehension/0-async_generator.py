@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
-'''Module which handles a coroutine generator function which returns an int'''
-
+"""yield values"""
 import asyncio
-import typing
 import random
+from typing import AsyncGenerator
 
 
-async def async_generator() -> typing.AsyncGenerator[float, None]:
-    '''Coroutine function that returns a randomize value'''
-    for i in range(10):
+async def async_generator() -> AsyncGenerator[float, None, None]:
+    """define func"""
+    for _ in range(10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)
