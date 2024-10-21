@@ -7,7 +7,7 @@ wait_random = __import__('3-tasks').task_wait_random
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """define func"""
-    delays = [task_wait_random(max_delay) for j in range(n)]
+    delays = [wait_random(max_delay) for j in range(n)]
     tasks = []
     for k in asyncio.as_completed(delays):
         task = await k
