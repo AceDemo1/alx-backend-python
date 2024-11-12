@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import unittest
+from unittest.mock import patch
 from parameterized import parameterized
-from utils import access_nested_map
+from utils import access_nested_map, get_json
 
 class TestAccessNestedMap(unittest.TestCase):
     @parameterized.expand([
@@ -33,6 +34,13 @@ class TestGetJson(unittest.TestCase):
         mock_obj.return_value.json.return_value = response
         self.assertEqual(request.get(url), response)
         mock_obj.assert_called_once_with(url)
+
+class TestMemoize(unittest.TestCase):
+    def test_memoize(self):
+        """memoize"""
+
+
+
 
 if __name__ == "__main__":
     unittest.main()
