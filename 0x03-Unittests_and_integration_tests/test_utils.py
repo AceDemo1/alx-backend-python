@@ -5,7 +5,9 @@ from unittest.mock import patch
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
 
+
 class TestAccessNestedMap(unittest.TestCase):
+    """AccessNestedMap"""
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
@@ -14,7 +16,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(self, n_map, path, ex):
         """test"""
         self.assertEqual(access_nested_map(n_map, path), ex)
-        
+    
     @parameterized.expand([
         ({}, ("a",)),
         ({"a": 1}, ("a", "b"))
@@ -24,7 +26,9 @@ class TestAccessNestedMap(unittest.TestCase):
         with self.assertRaises(KeyError) as err:
             access_nested_map(n_map, path)
 
+
 class TestGetJson(unittest.TestCase):
+    """GetJson"""
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
@@ -36,7 +40,9 @@ class TestGetJson(unittest.TestCase):
         self.assertEqual(get_json(url), response)
         mock_obj.assert_called_once_with(url)
 
+
 class TestMemoize(unittest.TestCase):
+    """Memoize"""
     def test_memoize(self):
         """memoize"""
         class TestClass:
@@ -54,6 +60,7 @@ class TestMemoize(unittest.TestCase):
             mock_obj.assert_called_once()
             self.assertEqual(r1, 42)
             self.assertEqual(r2, 42)
+
 
 if __name__ == "__main__":
     unittest.main()
