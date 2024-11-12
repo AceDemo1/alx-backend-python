@@ -30,11 +30,11 @@ class TestGetJson(unittest.TestCase):
         ("http://holberton.io", {"payload": False})
         ])
     @patch('requests.get')
-    def test_get_json(self, url, response, mock_get):
+    def test_get_json(self, url, response, mock_obj):
         """mock"""
-        mock_get.return_value.json.return_value = response
-        self.assertEqual(mock_get(url), response)
-        mock_get.assert_called_once_with(url)
+        mock_obj.return_value.json.return_value = response
+        self.assertEqual(get_json(url), response)
+        mock_obj.assert_called_once_with(url)
 
 class TestMemoize(unittest.TestCase):
     """def test_memoize(self):
