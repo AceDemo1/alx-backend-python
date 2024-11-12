@@ -23,7 +23,8 @@ class TestGithubOrgClient(unittest.TestCase):
 
     def test_public_repos_url(self):
         """public repos url"""
-        with patch.object(GithubOrgClient, 'org', new_callable=PropertyMock) as mock_obj:
+        with patch.object(GithubOrgClient,
+                'org', new_callable=PropertyMock) as mock_obj:
             mock_obj.return_value = {}
             obj = GithubOrgClient('test')
             self.asserEqual(obj._public_repos_url, {})
@@ -32,9 +33,10 @@ class TestGithubOrgClient(unittest.TestCase):
     def test_public_repos(self, mock_get):
         """public repos"""
         mock_get.return_value = [{'name': 'law'}]
-        with patch.object(GithubOrgClient, _public_repos_url, new_callable=PropertyMock) as mock_obj:
+        with patch.object(GithubOrgClient,
+                '_public_repos_url', new_callable=PropertyMock) as mock_obj:
             mock_obj.return_value = "https://api.github.com/orgs/test"
             obj = GithubOrgClient('test')
-            self.assertEqual(obj.public_repos, ['law'])
+            self.assertEqual(obj.public_repos(), ['law'])
             mock_get.assert_called_once_with(mock_obj.return_value)
             mock_obj.assert_called_once()
