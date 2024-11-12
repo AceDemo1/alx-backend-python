@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""
+Test for access_nested_map function
+"""
 import unittest
 import requests
 from unittest.mock import patch
@@ -16,7 +19,7 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(self, n_map, path, ex):
         """test"""
         self.assertEqual(access_nested_map(n_map, path), ex)
-    
+
     @parameterized.expand([
         ({}, ("a",)),
         ({"a": 1}, ("a", "b"))
