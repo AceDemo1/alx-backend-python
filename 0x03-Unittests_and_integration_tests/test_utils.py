@@ -14,14 +14,14 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(n_map, path), ex)
         
     @parameterized.expand([
-        ({}, ("a",),
-        ({"a": 1}, ("a", "b"), )
+        ({}, ("a",)),
+        ({"a": 1}, ("a", "b"))
         ])
-    def test_access_nested_map_exception(self, , n_map, path):
+    def test_access_nested_map_exception(self, n_map, path):
         """raises"""
         with self.assertRaises(KeyError) as err:
             access_nested_map(n_map, path)
-        self.assertEqual(str(context.exception), f"KeyError('{path[-1]}')")
+        self.assertEqual(str(err.exception), f"KeyError('{path[-1]}')")
 
 if __name__ == "__main__":
     unittest.main()
