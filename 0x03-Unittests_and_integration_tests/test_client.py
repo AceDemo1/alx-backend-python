@@ -10,9 +10,9 @@ from parameterized import parameterized
 class TestGithubOrgClient(unittest.TestCase):
     """GithubOrgClient"""
     @parameterized.expand([
-            ('google',),
-            ('abc',)
-            ])
+        ('google',),
+        ('abc',)
+        ])
     @patch('client.get_json')
     def test_org(self, name, mock_obj):
         """test_org"""
